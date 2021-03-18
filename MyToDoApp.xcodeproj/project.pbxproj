@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,7 @@
 		FF4FE5BC25FA71FD00D620AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4FE5BA25FA71FD00D620AF /* Main.storyboard */; };
 		FF4FE5BE25FA720200D620AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4FE5BD25FA720200D620AF /* Assets.xcassets */; };
 		FF4FE5C125FA720200D620AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4FE5BF25FA720200D620AF /* LaunchScreen.storyboard */; };
-		FF4FE5DE25FBC91700D620AF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5DD25FBC91700D620AF /* R.generated.swift */; };
+		FFA964682603934A00E726EB /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = FFA964672603934A00E726EB /* Rswift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,6 @@
 		FF4FE5BD25FA720200D620AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF4FE5C025FA720200D620AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF4FE5C225FA720200D620AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF4FE5DD25FBC91700D620AF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA964682603934A00E726EB /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +42,6 @@
 		FF4FE5A825FA71FC00D620AF = {
 			isa = PBXGroup;
 			children = (
-				FF4FE5DD25FBC91700D620AF /* R.generated.swift */,
 				FF4FE5B325FA71FD00D620AF /* MyToDoApp */,
 				FF4FE5B225FA71FD00D620AF /* Products */,
 			);
@@ -77,7 +76,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF4FE5C525FA720200D620AF /* Build configuration list for PBXNativeTarget "MyToDoApp" */;
 			buildPhases = (
-				FF4FE5C925FBBE1500D620AF /* Generate Resource */,
 				FF4FE5AD25FA71FC00D620AF /* Sources */,
 				FF4FE5AE25FA71FC00D620AF /* Frameworks */,
 				FF4FE5AF25FA71FC00D620AF /* Resources */,
@@ -89,6 +87,9 @@
 			dependencies = (
 			);
 			name = MyToDoApp;
+			packageProductDependencies = (
+				FFA964672603934A00E726EB /* Rswift */,
+			);
 			productName = MyToDoApp;
 			productReference = FF4FE5B125FA71FD00D620AF /* MyToDoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +117,9 @@
 				Base,
 			);
 			mainGroup = FF4FE5A825FA71FC00D620AF;
+			packageReferences = (
+				FFA964662603934A00E726EB /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = FF4FE5B225FA71FD00D620AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,26 +143,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FF4FE5C925FBBE1500D620AF /* Generate Resource */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = "Generate Resource";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n\nif mint list | grep -q 'R.swift'; then\n  mint run R.swift rswift generate \"$SRCROOT/R.generated.swift\"\nelse\n  echo \"error: R.swift not installed; run 'mint bootstrap' to install\"\n  return -1\nfi\n";
-		};
 		FF4FE5CA25FBC27B00D620AF /* Run SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,7 +189,6 @@
 				FF4FE5B925FA71FD00D620AF /* ViewController.swift in Sources */,
 				FF4FE5B525FA71FD00D620AF /* AppDelegate.swift in Sources */,
 				FF4FE5B725FA71FD00D620AF /* SceneDelegate.swift in Sources */,
-				FF4FE5DE25FBC91700D620AF /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshi.MyToDoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -381,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoshi.MyToDoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -407,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFA964662603934A00E726EB /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FFA964672603934A00E726EB /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFA964662603934A00E726EB /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF4FE5A925FA71FC00D620AF /* Project object */;
 }
