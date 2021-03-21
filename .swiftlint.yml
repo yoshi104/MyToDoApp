@@ -1,0 +1,8 @@
+disabled_rules:
+excluded:
+- Pods/
+- Podfile
+- Podfile.lock
+
+# 1行あたりの文字数制限
+line_length: 300
