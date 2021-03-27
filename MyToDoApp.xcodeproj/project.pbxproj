@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CBC2336020F5ACC5B42C0DBE /* Pods_MyToDoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540C8C0316EFC9C359D94071 /* Pods_MyToDoApp.framework */; };
 		FF251970260BBD54002F4236 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25196F260BBD54002F4236 /* Task.swift */; };
+		FF251975260F69BC002F4236 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF251974260F69BC002F4236 /* Realm */; };
+		FF251977260F69BC002F4236 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF251976260F69BC002F4236 /* RealmSwift */; };
 		FF4FE5B525FA71FD00D620AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B425FA71FD00D620AF /* AppDelegate.swift */; };
 		FF4FE5B725FA71FD00D620AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B625FA71FD00D620AF /* SceneDelegate.swift */; };
 		FF4FE5B925FA71FD00D620AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B825FA71FD00D620AF /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF251977260F69BC002F4236 /* RealmSwift in Frameworks */,
+				FF251975260F69BC002F4236 /* Realm in Frameworks */,
 				FFA964682603934A00E726EB /* Rswift in Frameworks */,
 				CBC2336020F5ACC5B42C0DBE /* Pods_MyToDoApp.framework in Frameworks */,
 			);
@@ -118,6 +122,8 @@
 			name = MyToDoApp;
 			packageProductDependencies = (
 				FFA964672603934A00E726EB /* Rswift */,
+				FF251974260F69BC002F4236 /* Realm */,
+				FF251976260F69BC002F4236 /* RealmSwift */,
 			);
 			productName = MyToDoApp;
 			productReference = FF4FE5B125FA71FD00D620AF /* MyToDoApp.app */;
@@ -148,6 +154,7 @@
 			mainGroup = FF4FE5A825FA71FC00D620AF;
 			packageReferences = (
 				FFA964662603934A00E726EB /* XCRemoteSwiftPackageReference "R.swift" */,
+				FF251973260F69BC002F4236 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = FF4FE5B225FA71FD00D620AF /* Products */;
 			projectDirPath = "";
@@ -463,6 +470,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FF251973260F69BC002F4236 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.7.2;
+			};
+		};
 		FFA964662603934A00E726EB /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
@@ -474,6 +489,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF251974260F69BC002F4236 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF251973260F69BC002F4236 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		FF251976260F69BC002F4236 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF251973260F69BC002F4236 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		FFA964672603934A00E726EB /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FFA964662603934A00E726EB /* XCRemoteSwiftPackageReference "R.swift" */;
