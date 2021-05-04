@@ -6,9 +6,14 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Task: Codable {
-    let id: String
-    let title: String
+final class Task: Object, Codable {
+    @objc dynamic var id: String?
+    @objc dynamic var title: String?
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TaskListViewController.swift
 //  MyToDoApp
 //
 //  Created by Yoshiyuki Kato on 2021/03/12.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TaskListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,12 +11,15 @@
 		FF251970260BBD54002F4236 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF25196F260BBD54002F4236 /* Task.swift */; };
 		FF251975260F69BC002F4236 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF251974260F69BC002F4236 /* Realm */; };
 		FF251977260F69BC002F4236 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF251976260F69BC002F4236 /* RealmSwift */; };
+		FF25197A260F6A01002F4236 /* TaskDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF251979260F6A01002F4236 /* TaskDataStore.swift */; };
 		FF4FE5B525FA71FD00D620AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B425FA71FD00D620AF /* AppDelegate.swift */; };
 		FF4FE5B725FA71FD00D620AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B625FA71FD00D620AF /* SceneDelegate.swift */; };
-		FF4FE5B925FA71FD00D620AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B825FA71FD00D620AF /* ViewController.swift */; };
+		FF4FE5B925FA71FD00D620AF /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4FE5B825FA71FD00D620AF /* TaskListViewController.swift */; };
 		FF4FE5BC25FA71FD00D620AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4FE5BA25FA71FD00D620AF /* Main.storyboard */; };
 		FF4FE5BE25FA720200D620AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4FE5BD25FA720200D620AF /* Assets.xcassets */; };
 		FF4FE5C125FA720200D620AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4FE5BF25FA720200D620AF /* LaunchScreen.storyboard */; };
+		FF74076E26219CF1000DAD23 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF74076D26219CF1000DAD23 /* TaskRepository.swift */; };
+		FF74077126219D7B000DAD23 /* TaskUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF74077026219D7B000DAD23 /* TaskUseCase.swift */; };
 		FFA964682603934A00E726EB /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = FFA964672603934A00E726EB /* Rswift */; };
 /* End PBXBuildFile section */
 
@@ -25,14 +28,17 @@
 		4D528F9BC9F1A9F9C648489E /* Pods-MyToDoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyToDoApp.release.xcconfig"; path = "Target Support Files/Pods-MyToDoApp/Pods-MyToDoApp.release.xcconfig"; sourceTree = "<group>"; };
 		540C8C0316EFC9C359D94071 /* Pods_MyToDoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyToDoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF25196F260BBD54002F4236 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FF251979260F6A01002F4236 /* TaskDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataStore.swift; sourceTree = "<group>"; };
 		FF4FE5B125FA71FD00D620AF /* MyToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4FE5B425FA71FD00D620AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF4FE5B625FA71FD00D620AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF4FE5B825FA71FD00D620AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF4FE5B825FA71FD00D620AF /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		FF4FE5BB25FA71FD00D620AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF4FE5BD25FA720200D620AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF4FE5C025FA720200D620AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF4FE5C225FA720200D620AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF74076D26219CF1000DAD23 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		FF74077026219D7B000DAD23 /* TaskUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,10 @@
 			children = (
 				FF4FE5B425FA71FD00D620AF /* AppDelegate.swift */,
 				FF4FE5B625FA71FD00D620AF /* SceneDelegate.swift */,
-				FF4FE5B825FA71FD00D620AF /* ViewController.swift */,
+				FF4FE5B825FA71FD00D620AF /* TaskListViewController.swift */,
+				FF74076D26219CF1000DAD23 /* TaskRepository.swift */,
+				FF74077026219D7B000DAD23 /* TaskUseCase.swift */,
+				FF251979260F6A01002F4236 /* TaskDataStore.swift */,
 				FF25196F260BBD54002F4236 /* Task.swift */,
 				FF4FE5BA25FA71FD00D620AF /* Main.storyboard */,
 				FF4FE5BD25FA720200D620AF /* Assets.xcassets */,
@@ -261,9 +270,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF4FE5B925FA71FD00D620AF /* ViewController.swift in Sources */,
+				FF74076E26219CF1000DAD23 /* TaskRepository.swift in Sources */,
+				FF4FE5B925FA71FD00D620AF /* TaskListViewController.swift in Sources */,
 				FF4FE5B525FA71FD00D620AF /* AppDelegate.swift in Sources */,
 				FF251970260BBD54002F4236 /* Task.swift in Sources */,
+				FF74077126219D7B000DAD23 /* TaskUseCase.swift in Sources */,
+				FF25197A260F6A01002F4236 /* TaskDataStore.swift in Sources */,
 				FF4FE5B725FA71FD00D620AF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
