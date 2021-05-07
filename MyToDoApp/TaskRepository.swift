@@ -7,16 +7,23 @@
 
 import RxSwift
 
-protocol TaskRepository {
-    var taskDataStore: TaskDataStoreProtocol! { get set }
-    func loadTask() -> Single<Task>
+protocol TaskRepositoryProtocol {
+    func load() -> Single<[Task]>
+    func write(task: Task) -> Single<Void>
 }
 
-final class TaskRepositoryImpl: TaskRepository {
-    var taskDataStore: TaskDataStoreProtocol!
-    
-    func loadTask() -> Single<Task> {
-        <#code#>
+final class TaskRepositoryImpl: TaskRepositoryProtocol {
+    let taskDataStore: TaskDataStoreProtocol
+
+    init(dataStore: TaskDataStoreProtocol) {
+        taskDataStore = dataStore
+    }
+
+    func load() -> Single<[Task]> {
+        taskDataStore.load()
+    }
+
+    func write(task: Task) -> Single<Void> {
+        taskDataStore.write(task: task)
     }
 }
-

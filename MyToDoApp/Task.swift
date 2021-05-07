@@ -11,9 +11,8 @@ import RealmSwift
 final class Task: Object, Codable {
     @objc dynamic var id: String?
     @objc dynamic var title: String?
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }
 }
-

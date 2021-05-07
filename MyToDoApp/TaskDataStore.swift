@@ -9,29 +9,36 @@ import RealmSwift
 import RxSwift
 
 protocol TaskDataStoreProtocol {
-    func loadTask() -> [Task]
-    func writeTask(object: [Task])
-//    func deleteTask()
+    func load() -> Single<[Task]>
+    func write(task: Task) -> Single<Void>
+    //    func deleteTask()
 }
 
 final class TaskDataStoreImpl: TaskDataStoreProtocol {
-    let task = Task()
     let realm = try? Realm()
-    
-    func loadTask() -> [Task] {
-        var taskArray: [Task] = []
-        if let taskData = realm?.objects(Task.self) {
-            for task in taskData {
-                taskArray.append(task)
-            }
-        }
-    }
-    
-    func writeTask(object: [Task]) {
-        try? realm?.write {
-            realm?.add(task)
-        }
-    }
-    
-}
 
+    func load() -> Single<[Task]> {
+        Single.create { [weak self] observer in
+            guard let self = self else { return Disposables.create() }
+
+            var taskArray: [Task] = []
+            if let taskData = self.realm?.objects(Task.self) {
+                for task in taskData {
+                    taskArray.append(task)
+                }
+                observer(.success(taskArray))
+            }
+            return Disposables.create()
+        }
+    }
+
+    func write(task: Task) -> Single<Void> {
+        Single.create { [weak self] observer in
+            try? self?.realm?.write {
+                self?.realm?.add(task)
+            }
+            observer(.success(()))
+            return Disposables.create()
+        }
+    }
+}
